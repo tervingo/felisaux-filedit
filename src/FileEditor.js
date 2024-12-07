@@ -86,24 +86,25 @@ const FileEditor = () => {
     }
   
     return (
-      <div className="max-w-4xl mx-auto p-6">
-        <h1 className="text-4xl font-bold mb-4 text-blue-600">File Editor</h1>
-        
-        <div className="flex flex-wrap gap-4 mb-4">
-          <button 
+      <div className="max-w-4xl mx-auto p-6" style={{ backgroundColor: 'lightgrey'}}>
+        <h1 className="text-4xl font-bold mb-4 text-blue-600" style={{ marginLeft: '50px'}}>File Editor</h1>
+         <div className="flex flex-wrap gap-4 mb-4">
+{/* 
+         <button 
             onClick={handleDownload}
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
           >
             Download File
           </button>
-  
+ */}  
           <button 
             onClick={() => handleUpload(content)}
             className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            style={{ marginLeft: '50px', marginBottom: '30px'}}
           >
             Upload Current Text
           </button>
-  
+{/*   
           <div className="flex items-center">
             <span className="mr-2">Or upload local file:</span>
             <input
@@ -113,6 +114,8 @@ const FileEditor = () => {
               className="mt-2"
             />
           </div>
+
+ */}
         </div>
   
         {saveStatus && (
@@ -128,7 +131,8 @@ const FileEditor = () => {
         <textarea
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          className="w-full h-96 p-4 border rounded font-mono"
+          className="p-4 border rounded font-mono"
+          style={{ width: '800px', height: '600px', marginLeft: '50px' }}
         />
       </div>
     );
