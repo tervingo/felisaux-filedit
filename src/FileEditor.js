@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { SERVER_IP } from './constants';
 
 // const response = await fetch(`${SERVER_IP}/api/upload`
 const FileEditor = () => {
@@ -34,7 +33,7 @@ const FileEditor = () => {
       loadFile();
     }, [loadFile]);
   
-    const handleDownload = () => {
+/*     const handleDownload = () => {
       const blob = new Blob([content], { type: 'text/plain' });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -55,7 +54,8 @@ const FileEditor = () => {
       }
     };
   
-    const handleUpload = async (textContent) => {
+ */    
+      const handleUpload = async (textContent) => {
       try {
         setSaveStatus('Uploading...');
 //        const response = await fetch(`http://localhost:5000/upload`, {
