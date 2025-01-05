@@ -68,8 +68,8 @@ const FileEditor = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6" style={{ backgroundColor: 'lightgrey'}}>
-      <h1 className="text-4xl font-bold mb-4 text-blue-600" style={{ marginLeft: '50px'}}>File Editor</h1>
-      <div className="flex flex-wrap gap-4 mb-4">
+      <h1 className="text-4xl font-bold mb-4 text-blue-600">File Editor</h1>
+      <div className="flex flex-wrap gap-4 mb-4" style={{ marginLeft: '50px'}}>
         <div>
           <h2 className="text-2xl font-bold mb-2">Felisadas</h2>
           <textarea
@@ -78,13 +78,14 @@ const FileEditor = () => {
             className="p-4 border rounded font-mono"
             style={{ width: '800px', height: '300px', marginBottom: '20px' }}
           />
-          <button 
-            onClick={() => handleUpload('https://felisaux-upload.onrender.com/upload-felisadas', felisadasContent)}
-            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
-            style={{ marginBottom: '30px'}}
-          >
-            Upload Felisadas Text
-          </button>
+          <div style={{ marginTop: '10px' }}>
+            <button 
+              onClick={() => handleUpload('https://felisaux-upload.onrender.com/upload-felisadas', felisadasContent)}
+              className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            >
+              Upload Felisadas Text
+            </button>
+          </div>
         </div>
         <div>
           <h2 className="text-2xl font-bold mb-2">Otros</h2>
@@ -94,13 +95,14 @@ const FileEditor = () => {
             className="p-4 border rounded font-mono"
             style={{ width: '800px', height: '300px', marginBottom: '20px' }}
           />
-          <button 
-            onClick={() => handleUpload('https://felisaux-upload.onrender.com/upload-otros', otrosContent)}
-            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
-            style={{ marginBottom: '30px'}}
-          >
-            Upload Otros Text
-          </button>
+          <div style={{ marginTop: '10px' }}>
+            <button 
+              onClick={() => handleUpload('https://felisaux-upload.onrender.com/upload-otros', otrosContent)}
+              className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            >
+              Upload Otros Text
+            </button>
+          </div>
         </div>
       </div>
 
@@ -116,5 +118,6 @@ const FileEditor = () => {
     </div>
   );
 };
+
 
 export default FileEditor;
