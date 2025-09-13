@@ -10,7 +10,8 @@ const FileEditor = () => {
   const loadFile = useCallback(async (url, setContent) => {
     try {
       setIsLoading(true);
-      const CORS_PROXY = "https://api.allorigins.win/raw?url=";
+//      const CORS_PROXY = "https://api.allorigins.win/raw?url=";
+      const CORS_PROXY = "https://corsproxy.io/?";
       const response = await fetch(CORS_PROXY + encodeURIComponent(url));
       
       if (!response.ok) {
