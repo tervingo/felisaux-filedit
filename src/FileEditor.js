@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 const FileEditor = () => {
   const [felisadasContent, setFelisadasContent] = useState('');
   const [otrosContent, setOtrosContent] = useState('');
+  const [serranadasContent, setSerranadasContent] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [saveStatus, setSaveStatus] = useState('');
@@ -32,6 +33,7 @@ const FileEditor = () => {
   useEffect(() => {
     loadFile("http://tervingo.com/Felisarium/felisadas.txt", setFelisadasContent);
     loadFile("http://tervingo.com/Felisarium/otros.txt", setOtrosContent);
+    loadFile("http://tervingo.com/Felisarium/serranadas.txt", setSerranadasContent);
   }, [loadFile]);
 
   const handleUpload = async (url, textContent) => {
@@ -97,11 +99,28 @@ const FileEditor = () => {
             style={{ width: '800px', height: '300px', marginBottom: '20px' }}
           />
           <div style={{ marginTop: '10px' }}>
-            <button 
+            <button
               onClick={() => handleUpload('https://felisaux-upload.onrender.com/upload-otros', otrosContent)}
               className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
             >
               Upload Otros Text
+            </button>
+          </div>
+        </div>
+        <div>
+          <h2 className="text-2xl font-bold mb-2">Serranadas</h2>
+          <textarea
+            value={serranadasContent}
+            onChange={(e) => setSerranadasContent(e.target.value)}
+            className="p-4 border rounded font-mono"
+            style={{ width: '800px', height: '300px', marginBottom: '20px' }}
+          />
+          <div style={{ marginTop: '10px' }}>
+            <button
+              onClick={() => handleUpload('https://felisaux-upload.onrender.com/upload-serranadas', serranadasContent)}
+              className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            >
+              Upload Serranadas Text
             </button>
           </div>
         </div>
