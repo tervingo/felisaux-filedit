@@ -1,0 +1,11 @@
+[build]
+  publish = "build"
+  command = "npm run build"
+
+# Proxy para evitar CORS al cargar archivos de tervingo.com
+# /api/proxy/tervingo.com/Felisarium/archivo.txt -> http://tervingo.com/Felisarium/archivo.txt
+[[redirects]]
+  from = "/api/proxy/*"
+  to = "http://:splat"
+  status = 200
+  force = true
