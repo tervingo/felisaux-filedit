@@ -11,9 +11,10 @@ const FileEditor = () => {
   const loadFile = useCallback(async (url, setContent) => {
     try {
       setIsLoading(true);
-//      const CORS_PROXY = "https://api.allorigins.win/raw?url=";
-      const CORS_PROXY = "https://corsproxy.io/?";
-      const response = await fetch(CORS_PROXY + encodeURIComponent(url));
+      // Proxy de Netlify para evitar CORS (corsproxy.io devuelve 403)
+      const CORS_PROXY = "https://fauxedit.netlify.app/api/proxy/";
+      const proxyUrl = CORS_PROXY + url.replace(/^https?:\/\//, '');
+      const response = await fetch(proxyUrl);
       
       if (!response.ok) {
         throw new Error(`Failed to load file: ${response.status}`);
